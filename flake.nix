@@ -20,11 +20,13 @@
         devenv.shells.default = {
           imports = [
             ./lib/nix/python.nix
+            ./lib/nix/rust.nix
           ];
 
           languages.nix.enable = true;
           packages = with pkgs; [
             nixpkgs-fmt
+            nil
           ];
         };
       };
