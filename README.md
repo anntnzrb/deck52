@@ -22,13 +22,13 @@ rules:
   **string-like** elements
   - The first **string-like** element represents the card's **rank**
   - The second **string-like** element represents the card's **suit**
-  - The container should be unordered (random order each run)
+  - The container should preferably be unordered
 - Include a minimal test suite; `assert`-ing the size of the deck is sufficient
 - Favor a functional programming style over an imperative one
   - Avoid loop constructs, prefer higher-order functions
   - In essence, aim for concise code
 - Utilize the most appropriate data structure for the task
-  - Use a **set** instead of a **list** as card order is irrelevant
+  - e.g. a **set** instead of a **list** as deck's cards order is irrelevant
   
 **Do not's:**
 - **Shuffle** the deck
