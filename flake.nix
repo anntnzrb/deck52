@@ -21,6 +21,7 @@
           imports = [
             ./lib/nix/python.nix
             ./lib/nix/rust.nix
+            ./lib/nix/typescript.nix
           ];
 
           languages.nix.enable = true;

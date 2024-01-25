@@ -1,0 +1,21 @@
+{
+  "name": "deck52",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsc && node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anntnzrb/deck52.git"
+  },
+  "author": "anntnzrb",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/ramda": "^0.29.10",
+    "ramda": "^0.29.1"
+  }
+}
