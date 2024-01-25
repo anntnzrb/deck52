@@ -1,32 +1,32 @@
 # deck52
 
-`deck52` is a collection of tiny programs written in various languages.
+`deck52` is a suite of compact programs, each written in a different language,
+designed to generate a standard 52-card deck.
 
 A deck consists of 52 cards:
 
-- 4 suits (clubs, diamonds, hearts, spades)
-- 13 ranks (2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, king, ace)
+- 4 suits: *clubs*, *diamonds*, *hearts*, *spades*
+- 13 ranks: *2 - 10*, *jack*, *queen*, *king*, *ace*
 
 ## Goals
 
-- Strict to the language's standard library
-   - No external dependencies
+- Leverage the standard libraries of each language exclusively
+   - Avoid external dependencies
    
 ## Implementations
 
-All implementations should be functionally equivalent.  The following rules
-apply to all implementations:
+All implementations should be functionally identical, adhering to the following rules:
 
-1st priority:
-- The `main` function, which is the entry point of the program.
-- The `genDeck` function, which generates a deck of cards.
-- A tiny test suite.
-  - An `assert` definition works just fine.
-  
-2nd priority:
-- Prefer a functional style over an imperative style.
-- Use an appropriate data structure for the task.
-  - e.g. a set over a list as order of the cards is not important.
+Primary requirements:
+- A `main` function to serve as the program's entry point
+- A `genDeck` function for generating a deck of cards
+- A minimal test suite, utilizing the `assert` method
+- Single file, where the `main` function is placed
+
+Secondary considerations:
+- Favor functional programming style over imperative
+- Employ the most suitable data structure for the task
+  - e.g., use a set instead of a list as card order is irrelevant
 
 ## COPYING
 
