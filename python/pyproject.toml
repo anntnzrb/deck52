@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "deck52"
+version = "1.0.0"
+authors = ["anntnzrb <anntnzrb@protonmail.com>"]
+description = ""
+readme = "README.md"
+packages = [{include = "deck52", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.scripts]
+app = "src.deck52.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
