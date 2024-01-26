@@ -1,8 +1,8 @@
-# Created 2024-01-25 Thu 21:50
+# Created 2024-01-26 Fri 03:24
 #+options: toc:t author:t email:t
 #+title: deck52
 #+author: anntnzrb
-#+email: annt@munich
+#+email: runner@fv-az973-351
 #+language: en
 
 =deck52= is a collection of compact programs, each written in a unique
