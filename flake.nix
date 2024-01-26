@@ -22,6 +22,7 @@
             ./lib/nix/python.nix
             ./lib/nix/rust.nix
             ./lib/nix/typescript.nix
+            ./lib/nix/clojure.nix
           ];
 
           languages.nix.enable = true;
