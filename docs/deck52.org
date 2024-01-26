@@ -1,8 +1,9 @@
 #+title:    deck52
 #+author:   anntnzrb
+#+email:    anntnzrb@protonmail.com
 #+language: en
 
-#+options:  toc:t author:t email:t
+#+options:  toc:t author:t email:t timestamp:nil
 
 =deck52= is a collection of compact programs, each written in a unique
 programming language, with the purpose of generating a standard 52-card deck.
