@@ -15,4 +15,5 @@
   []
   (let [deck52 (gen-deck)]
     (println deck52)
+
     (assert (= (count deck52) 52))))
