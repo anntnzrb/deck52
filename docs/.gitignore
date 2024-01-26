@@ -1,0 +1,4 @@
+# ignore everything except for self and a few files
+/*
+!.gitignore
+!deck52.org

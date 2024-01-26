@@ -1,0 +1,144 @@
+# Created 2024-01-25 Thu 21:50
+#+options: toc:t author:t email:t
+#+title: deck52
+#+author: anntnzrb
+#+email: annt@munich
+#+language: en
+
+=deck52= is a collection of compact programs, each written in a unique
+programming language, with the purpose of generating a standard 52-card deck.
+
+A deck is composed of 52 cards:
+
+- 4 suits: *clubs*, *diamonds*, *hearts*, *spades*
+- 13 ranks: *2 - 10*, *jack*, *queen*, *king*, *ace*
+
+* Guidelines
+All implementations should be functionally identical, adhering to the following
+rules:
+
+*Do's:*
+- Include a =main= function to serve as the program's entry
+point
+- The program should be a single file, with the =main= function
+included
+- Implement a =genDeck= function to generate a deck of cards
+  - Adhere to naming conventions, obviously - The program's output should be a
+    *container* of *pair-like* *string-like* elements
+- The first *string-like* element represents the card's *rank*
+  - The second *string-like* element represents the card's *suit*
+  - The container should preferably be unordered - Include a minimal test
+    suite; =assert=-ing the size of the deck is sufficient
+- Favor a functional programming style over an imperative one
+  - Avoid loop constructs, prefer higher-order functions
+  - In essence, aim for concise code
+- Utilize the most appropriate data structure for the task
+  - e.g. a *set* instead of a *list* as deck's cards order is irrelevant
+
+*Do not's:*
+- *Shuffle* the deck
+  - Instead, use a data structure that is inherently unordered
+- Adopt an OOP-oriented approach
+  - Avoid classes, structs, etc.
+  - Favor simple data structures and functions
+
+* Implementations
+
+** Python
+#+begin_src python
+  import itertools as it
+  from typing import Set, Tuple
+
+
+  def genDeck() -> Set[Tuple[str, str]]:
+      ranks: Set[str] = {str(n) for n in range(2, 11)}.union({"J", "Q", "K", "A"})
+      suites: Set[str] = {"Clubs", "Diamonds", "Spades", "Hearts"}
+
+      return set(it.product(ranks, suites))
+
+
+  def main() -> None:
+      deck52: Set[Tuple[str, str]] = genDeck()
+      print(deck52)
+
+      assert len(deck52) == 52
+#+end_src
+
+** Rust
+#+begin_src rust
+  use std::collections::HashSet;
+
+  use itertools::iproduct;
+
+  fn gen_deck() -> HashSet<(String, String)> {
+      let ranks = (2..=10)
+          .map(|x| x.to_string())
+          .chain("JQKA".chars().map(|s| s.to_string()));
+
+      let suites = ["Clubs", "Diamonds", "Hearts", "Spades"]
+          .iter()
+          .map(|s| s.to_string());
+
+      iproduct!(ranks, suites).collect()
+  }
+
+  fn main() {
+      let deck52: HashSet<_> = gen_deck();
+      println!("{:?}", deck52);
+
+      assert_eq!(deck52.len(), 52);
+  }
+#+end_src
+
+** Typescript
+#+begin_src typescript
+  import * as R from "ramda";
+
+  const range = (start: number, end: number): number[] => {
+    return Array.from({ length: end - start }, (_, k) => k + start);
+  };
+
+  const genDeck = (): Set<[string, string]> => {
+    const ranks: string[] = [...range(2, 11).map(String), "J", "Q", "K", "A"];
+    const suites: string[] = ["Clubs", "Diamonds", "Hearts", "Spades"];
+
+    return new Set(R.xprod(ranks, suites));
+  };
+
+  const main = (): void => {
+    const deck52: Set<[string, string]> = genDeck();
+    console.log(deck52);
+
+    if (deck52.size !== 52) {
+      throw new Error("Deck size is not 52");
+    }
+  };
+
+  main();
+#+end_src
+
+** Clojure
+#+begin_src clojure
+  (ns deck52.core
+    (:gen-class)
+    (:require [clojure.math.combinatorics :as combo]))
+
+  (defn gen-deck
+    []
+    (let [ranks (->> (range 2 11)
+                     (map str)
+                     (concat ["J", "Q", "K", "A"])
+                     (set))
+          suites #{"Clubs" "Diamonds" "Hearts" "Spades"}]
+      (combo/cartesian-product ranks suites)))
+
+  (defn -main
+    []
+    (let [deck52 (gen-deck)]
+      (println deck52)
+      (assert (= (count deck52) 52))))
+#+end_src
+
+* COPYING
+Unless otherwise specified, all code herein is distributed under the terms of
+the [[https://www.gnu.org/licenses/gpl-3.0.en.html][GNU General Public License Version 3 or later]].

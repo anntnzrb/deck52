@@ -1,0 +1,25 @@
+#!/usr/bin/env -S emacs -Q --script
+
+;; FIXME: use (-x) flag ^ (whenever works?)
+
+(defun export-org-to-org (org-file-path output-file-name)
+  "Export an org file at ORG-FILE-PATH to another org file.
+The output file is saved as OUTPUT-FILE-NAME with the extension '.org'."
+  (require 'ox-org)
+
+  (let ((output-file-path (concat output-file-name ".org")))
+    (with-current-buffer (find-file-noselect org-file-path)
+      (org-export-to-file 'org output-file-path))))
+
+(defun main ()
+  "Process command-line arguments and export the org file.
+Two arguments are required: ORG-FILE-PATH and OUTPUT-FILE-NAME."
+  (unless (= (length argv) 2)
+    (error "Two arguments required: ORG-FILE-PATH OUTPUT-FILE-NAME"))
+  (apply #'export-org-to-org argv))
+
+(main)
+
+;; Local Variables:
+;; mode: emacs-lisp
+;; End:

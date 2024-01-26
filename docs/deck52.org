@@ -1,0 +1,60 @@
+#+title:    deck52
+#+author:   anntnzrb
+#+language: en
+
+#+options:  toc:t author:t email:t
+
+=deck52= is a collection of compact programs, each written in a unique
+programming language, with the purpose of generating a standard 52-card deck.
+
+A deck is composed of 52 cards:
+
+- 4 suits: *clubs*, *diamonds*, *hearts*, *spades*
+- 13 ranks: *2 - 10*, *jack*, *queen*, *king*, *ace*
+
+* Guidelines
+All implementations should be functionally identical, adhering to the following
+rules:
+
+*Do's:*
+- Include a =main= function to serve as the program's entry
+point
+- The program should be a single file, with the =main= function
+included
+- Implement a =genDeck= function to generate a deck of cards
+  - Adhere to naming conventions, obviously - The program's output should be a
+    *container* of *pair-like* *string-like* elements
+- The first *string-like* element represents the card's *rank*
+  - The second *string-like* element represents the card's *suit*
+  - The container should preferably be unordered - Include a minimal test
+    suite; =assert=-ing the size of the deck is sufficient
+- Favor a functional programming style over an imperative one
+  - Avoid loop constructs, prefer higher-order functions
+  - In essence, aim for concise code
+- Utilize the most appropriate data structure for the task
+  - e.g. a *set* instead of a *list* as deck's cards order is irrelevant
+
+*Do not's:*
+- *Shuffle* the deck
+  - Instead, use a data structure that is inherently unordered
+- Adopt an OOP-oriented approach
+  - Avoid classes, structs, etc.
+  - Favor simple data structures and functions
+
+* Implementations
+
+** Python
+#+INCLUDE: "../python/src/deck52/main.py" src python
+
+** Rust
+#+INCLUDE: "../rust/src/main.rs" src rust
+
+** Typescript
+#+INCLUDE: "../typescript/src/index.ts" src typescript
+
+** Clojure
+#+INCLUDE: "../clojure/src/deck52/core.clj" src clojure
+
+* COPYING
+Unless otherwise specified, all code herein is distributed under the terms of
+the [[https://www.gnu.org/licenses/gpl-3.0.en.html][GNU General Public License Version 3 or later]].
