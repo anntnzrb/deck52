@@ -56,6 +56,9 @@ included
 ** Clojure
 #+INCLUDE: "../clojure/src/deck52/core.clj" src clojure
 
+** Haskell
+#+INCLUDE: "../haskell/app/Main.hs" src haskell
+
 * COPYING
 Unless otherwise specified, all code herein is distributed under the terms of
 the [[https://www.gnu.org/licenses/gpl-3.0.en.html][GNU General Public License Version 3 or later]].

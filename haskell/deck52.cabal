@@ -1,0 +1,18 @@
+cabal-version:   3.0
+name:            deck52
+version:         1.0.0
+homepage:        https://github.com/anntnzrb/deck52
+author:          anntnzrb
+maintainer:      anntnzrb@protonmail.com
+build-type:      Simple
+
+common warnings
+    ghc-options: -Wall -O3
+
+executable deck52
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:    base ^>=4.17.2.1,
+                      containers
+    hs-source-dirs:   app
+    default-language: Haskell2010

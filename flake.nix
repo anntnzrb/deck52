@@ -26,6 +26,7 @@
             ./lib/nix/rust.nix
             ./lib/nix/typescript.nix
             ./lib/nix/clojure.nix
+            ./lib/nix/haskell.nix
           ];
 
           languages.nix.enable = true;
