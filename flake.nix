@@ -22,17 +22,13 @@
       perSystem = { config, self', inputs', pkgs, system, ... }: {
         devenv.shells.default = {
           imports = [
+            ./lib/nix/nix.nix
+
             ./lib/nix/python.nix
             ./lib/nix/rust.nix
             ./lib/nix/typescript.nix
             ./lib/nix/clojure.nix
             ./lib/nix/haskell.nix
-          ];
-
-          languages.nix.enable = true;
-          packages = with pkgs; [
-            nixpkgs-fmt
-            nil
           ];
         };
       };
