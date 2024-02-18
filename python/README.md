@@ -2,6 +2,6 @@
 
 ## Run
 
-``` sh
+```sh
 poetry run app
 ```

@@ -2,7 +2,7 @@
 
 ## Run
 
-``` sh
+```sh
 npm start
 ```
 

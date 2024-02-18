@@ -6,7 +6,7 @@ Notes:
 
 ## Run
 
-``` sh
+```sh
 cargo run -q
 ```
 

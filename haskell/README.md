@@ -2,6 +2,6 @@
 
 ## Run
 
-``` haskell
+```haskell
 cabal run -v0
 ```
