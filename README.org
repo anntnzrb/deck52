@@ -17,10 +17,8 @@ All implementations should be functionally identical, adhering to the following
 rules:
 
 *Do's:*
-- Include a =main= function to serve as the program's entry
-point
-- The program should be a single file, with the =main= function
-included
+- Include a =main= function to serve as the program's entry point
+- The program should be a single file, with the =main= function included
 - Implement a =genDeck= function to generate a deck of cards
   - Adhere to naming conventions, obviously - The program's output should be a
     *container* of *pair-like* *string-like* elements
